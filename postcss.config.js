@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 module.exports = {
   plugins: [
-    require('autoprefixer'),
     require('postcss-nested'),
+    require('autoprefixer'),
     require('cssnano')({
       preset: [
         'default', {
