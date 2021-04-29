@@ -1,12 +1,11 @@
+@import '/../../assets/css/variables/header.css';
+@import '/../../assets/css/variables/custom-media.css';
+
 .layout {
   position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
-  &__header {
-    border-bottom: 3px solid #eee;
-  }
 
   &__main {
     display: flex;
@@ -19,16 +18,23 @@
     margin: 0 auto;
   }
 
-  &__footer {
-    color: #fff;
-    background-color: black;
+  &__sidebar {
+    box-sizing: border-box;
+    flex: none;
+    order: -1;
+    width: 250px;
+    background: #f5f2f0;
+    border-right: 1px solid #d5d2d0;
   }
 
-  &__sidebar {
+  &__sidebar-box {
     position: sticky;
-    top: 0;
+    top: var(--header-height);
     left: 0;
-    order: -1;
+    box-sizing: border-box;
+    height: calc(100vh - var(--header-height));
+    padding: 40px 25px;
+    overflow-y: auto;
   }
 
   &__sidebar-group {
@@ -36,22 +42,12 @@
       margin-top: 40px;
     }
   }
+}
 
-  &__sidebar-menu {
-
-  }
-
-  &__sidebar-menu-item {
-    & + & {
-      margin-top: 8px;
-    }
-  }
-
-  &__sidebar-menu-link {
-
-  }
-
-  &__sidebar-menu-link_active {
+/*
+@media (--desktop) {
+  .layout {
 
   }
 }
+*/

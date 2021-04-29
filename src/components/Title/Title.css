@@ -1,3 +1,50 @@
+@import '/../../assets/css/variables/custom-media.css';
+
 .title {
-  margin: 0 0 1em;
+  padding: 0 0 1em;
+  margin: 0;
+  font-weight: bold;
+  line-height: 1.45;
+
+  &_1 {
+    font-size: 40px;
+    line-height: 1.1;
+    color: #282c34;
+  }
+
+  &_2 {
+    font-size: 24px;
+  }
+
+  &_3 {
+    font-size: 20px;
+  }
+
+  &_4,
+  &_5,
+  &_6 {
+    font-size: 18px;
+  }
+}
+
+@media (--desktop) {
+  .title {
+    &_1 {
+      font-size: 60px;
+    }
+
+    &_2 {
+      font-size: 36px;
+    }
+
+    &_3 {
+      font-size: 28px;
+    }
+
+    &_4,
+    &_5,
+    &_6 {
+      font-size: 20px;
+    }
+  }
 }

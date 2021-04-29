@@ -1,0 +1,28 @@
+@import '/../../assets/css/variables/link.css';
+
+.list-menu {
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    font-size: 14px;
+
+    & + & {
+      margin-top: 12px;
+    }
+  }
+
+  &__link {
+    color: var(--link-color);
+    text-decoration: none;
+  }
+
+  &__link:hover,
+  &__link:active,
+  &__link_active {
+    color: var(--link-hover-color);
+  }
+}

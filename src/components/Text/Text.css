@@ -1,9 +1,10 @@
 .text {
   p {
-    margin: 0 0 1em;
+    padding: 0 0 1em;
+    margin: 0;
   }
 
   p:last-child {
-    margin: 0;
+    padding: 0;
   }
 }
