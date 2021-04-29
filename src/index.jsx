@@ -12,13 +12,15 @@ ReactDOM.render(
       <Route exact path="/">
         <Home />
       </Route>
-      <Route exact path="/article">
+      <Route exact path="/article/:id">
         <Article />
       </Route>
-      <Route>
+      <Route path="*">
         <Title>404</Title>
       </Route>
     </Switch>
   </BrowserRouter>,
   document.getElementById('root'),
 );
+
+// Пример SSR с react-router-dom https://reactrouter.com/web/guides/server-rendering/putting-it-all-together

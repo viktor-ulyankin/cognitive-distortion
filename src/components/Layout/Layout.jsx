@@ -16,15 +16,15 @@ const Layout = ({ children }) => (
         <div className="layout__sidebar-group">
           <ul className="layout__sidebar-menu">
             <li className="layout__sidebar-menu-item">
-              <NavLink className="layout__sidebar-menu-link" activeClassName="layout__sidebar-menu-link_active" to="/article">Первая статья</NavLink>
+              <NavLink className="layout__sidebar-menu-link" activeClassName="layout__sidebar-menu-link_active" to="/article/1">Первая статья</NavLink>
             </li>
 
             <li className="layout__sidebar-menu-item">
-              <NavLink className="layout__sidebar-menu-link" activeClassName="layout__sidebar-menu-link_active" to="/article">Первая статья</NavLink>
+              <NavLink className="layout__sidebar-menu-link" activeClassName="layout__sidebar-menu-link_active" to="/article/2">Первая статья</NavLink>
             </li>
 
             <li className="layout__sidebar-menu-item">
-              <NavLink className="layout__sidebar-menu-link" activeClassName="layout__sidebar-menu-link_active" to="/article">Первая статья</NavLink>
+              <NavLink className="layout__sidebar-menu-link" activeClassName="layout__sidebar-menu-link_active" to="/article/3">Первая статья</NavLink>
             </li>
           </ul>
         </div>
