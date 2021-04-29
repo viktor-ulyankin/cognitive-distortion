@@ -1,0 +1,39 @@
+@import '/../../assets/css/variables/custom-media.css';
+
+.footer {
+  padding: 20px 10px;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  background-color: black;
+
+  &__box {
+    margin-top: -10px;
+  }
+
+  &__item {
+    padding-top: 10px;
+  }
+
+  a {
+    color: #fff;
+  }
+}
+
+@media (--desktop) {
+  .footer {
+    padding: 20px 25px;
+
+    &__box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin: -10px;
+    }
+
+    &__item {
+      padding: 10px;
+    }
+  }
+}

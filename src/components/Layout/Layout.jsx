@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import Header from '../Header';
+import Footer from '../Footer';
+import ListMenu from '../ListMenu';
 
 const Layout = ({ children }) => (
   <div className="layout">
-    <header className="layout__header">
-      <Link className="layout__sidebar-menu-link" to="/">Главная страница</Link>
-    </header>
+    <Header closingBurger />
 
     <main className="layout__main">
       <article className="layout__article">
@@ -13,27 +13,251 @@ const Layout = ({ children }) => (
       </article>
 
       <nav className="layout__sidebar">
-        <div className="layout__sidebar-group">
-          <ul className="layout__sidebar-menu">
-            <li className="layout__sidebar-menu-item">
-              <NavLink className="layout__sidebar-menu-link" activeClassName="layout__sidebar-menu-link_active" to="/article/1">Первая статья</NavLink>
-            </li>
+        <div className="layout__sidebar-box">
+          <div className="layout__sidebar-group">
+            <ListMenu
+              links={
+                [
+                  {
+                    id: 1,
+                    name: 'Первая статья',
+                    link: '/article/1',
+                  },
+                  {
+                    id: 2,
+                    name: 'Вторая статья',
+                    link: '/article/2',
+                  },
+                  {
+                    id: 3,
+                    name: 'Третья статья',
+                    link: '/article/3',
+                  },
+                ]
+              }
+            />
+          </div>
 
-            <li className="layout__sidebar-menu-item">
-              <NavLink className="layout__sidebar-menu-link" activeClassName="layout__sidebar-menu-link_active" to="/article/2">Первая статья</NavLink>
-            </li>
+          <div className="layout__sidebar-group">
+            <ListMenu
+              links={
+                [
+                  {
+                    id: 4,
+                    name: 'Первая статья',
+                    link: '/article/1',
+                  },
+                  {
+                    id: 5,
+                    name: 'Вторая статья',
+                    link: '/article/2',
+                  },
+                  {
+                    id: 6,
+                    name: 'Третья статья',
+                    link: '/article/3',
+                  },
+                ]
+              }
+            />
+          </div>
 
-            <li className="layout__sidebar-menu-item">
-              <NavLink className="layout__sidebar-menu-link" activeClassName="layout__sidebar-menu-link_active" to="/article/3">Первая статья</NavLink>
-            </li>
-          </ul>
+          <div className="layout__sidebar-group">
+            <ListMenu
+              links={
+                [
+                  {
+                    id: 7,
+                    name: 'Первая статья',
+                    link: '/article/1',
+                  },
+                  {
+                    id: 8,
+                    name: 'Вторая статья',
+                    link: '/article/2',
+                  },
+                  {
+                    id: 9,
+                    name: 'Третья статья',
+                    link: '/article/3',
+                  },
+                ]
+              }
+            />
+          </div>
+
+          <div className="layout__sidebar-group">
+            <ListMenu
+              links={
+                [
+                  {
+                    id: 10,
+                    name: 'Первая статья',
+                    link: '/article/1',
+                  },
+                  {
+                    id: 11,
+                    name: 'Вторая статья',
+                    link: '/article/2',
+                  },
+                  {
+                    id: 12,
+                    name: 'Третья статья',
+                    link: '/article/3',
+                  },
+                ]
+              }
+            />
+          </div>
+
+          <div className="layout__sidebar-group">
+            <ListMenu
+              links={
+                [
+                  {
+                    id: 13,
+                    name: 'Первая статья',
+                    link: '/article/1',
+                  },
+                  {
+                    id: 14,
+                    name: 'Вторая статья',
+                    link: '/article/2',
+                  },
+                  {
+                    id: 15,
+                    name: 'Третья статья',
+                    link: '/article/3',
+                  },
+                ]
+              }
+            />
+          </div>
+
+          <div className="layout__sidebar-group">
+            <ListMenu
+              links={
+                [
+                  {
+                    id: 16,
+                    name: 'Первая статья',
+                    link: '/article/1',
+                  },
+                  {
+                    id: 17,
+                    name: 'Вторая статья',
+                    link: '/article/2',
+                  },
+                  {
+                    id: 18,
+                    name: 'Третья статья',
+                    link: '/article/3',
+                  },
+                ]
+              }
+            />
+          </div>
+
+          <div className="layout__sidebar-group">
+            <ListMenu
+              links={
+                [
+                  {
+                    id: 19,
+                    name: 'Первая статья',
+                    link: '/article/1',
+                  },
+                  {
+                    id: 20,
+                    name: 'Вторая статья',
+                    link: '/article/2',
+                  },
+                  {
+                    id: 21,
+                    name: 'Третья статья',
+                    link: '/article/3',
+                  },
+                ]
+              }
+            />
+          </div>
+
+          <div className="layout__sidebar-group">
+            <ListMenu
+              links={
+                [
+                  {
+                    id: 22,
+                    name: 'Первая статья',
+                    link: '/article/1',
+                  },
+                  {
+                    id: 23,
+                    name: 'Вторая статья',
+                    link: '/article/2',
+                  },
+                  {
+                    id: 24,
+                    name: 'Третья статья',
+                    link: '/article/3',
+                  },
+                ]
+              }
+            />
+          </div>
+
+          <div className="layout__sidebar-group">
+            <ListMenu
+              links={
+                [
+                  {
+                    id: 25,
+                    name: 'Первая статья',
+                    link: '/article/1',
+                  },
+                  {
+                    id: 26,
+                    name: 'Вторая статья',
+                    link: '/article/2',
+                  },
+                  {
+                    id: 27,
+                    name: 'Третья статья',
+                    link: '/article/3',
+                  },
+                ]
+              }
+            />
+          </div>
+
+          <div className="layout__sidebar-group">
+            <ListMenu
+              links={
+                [
+                  {
+                    id: 28,
+                    name: 'Первая статья',
+                    link: '/article/1',
+                  },
+                  {
+                    id: 29,
+                    name: 'Вторая статья',
+                    link: '/article/2',
+                  },
+                  {
+                    id: 30,
+                    name: 'Третья статья',
+                    link: '/article/3',
+                  },
+                ]
+              }
+            />
+          </div>
         </div>
       </nav>
     </main>
 
-    <footer className="layout__footer">
-      FOOTER
-    </footer>
+    <Footer />
   </div>
 );
 
