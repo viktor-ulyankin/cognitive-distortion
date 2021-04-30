@@ -1,6 +1,6 @@
-@import '/../../assets/css/variables/header.css';
-@import '/../../assets/css/variables/link.css';
-@import '/../../assets/css/variables/custom-media.css';
+@import '/../../helpers/css/variables/header.css';
+@import '/../../helpers/css/variables/link.css';
+@import '/../../helpers/css/variables/custom-media.css';
 
 .header {
   box-sizing: border-box;
@@ -8,7 +8,12 @@
   height: var(--header-height);
   padding-right: 10px;
   overflow: hidden;
+  background-color: #fff;
   border-bottom: 4px solid #eee;
+
+  &__burger {
+    display: none;
+  }
 
   &__box {
     display: flex;
@@ -24,47 +29,45 @@
   }
 
   &__item_title {
+    display: none;
+  }
+
+  &__item_search {
     flex: auto;
   }
+}
 
-  &__burger {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 60px;
-    padding: 0 10px;
-    cursor: pointer;
-    content: '';
-    background-color: transparent;
-    border: none;
+@media (--mobile) {
+  .header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
 
-    &::before {
-      width: 30px;
-      height: 24px;
+    &__burger {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 60px;
+      padding: 0 10px;
+      cursor: pointer;
       content: '';
-      background: linear-gradient(to bottom, var(--link-color) 16%, transparent 17%, transparent 42%, var(--link-color) 43%, var(--link-color) 58%, transparent 59%, transparent 84%, var(--link-color) 85%);
-    }
-  }
+      background-color: transparent;
+      border: none;
 
-  &__burger:hover,
-  &__burger:active {
-    &::before {
-      background: linear-gradient(to bottom, var(--link-hover-color) 16%, transparent 17%, transparent 42%, var(--link-hover-color) 43%, var(--link-hover-color) 58%, transparent 59%, transparent 84%, var(--link-hover-color) 85%);
+      &::before {
+        width: 30px;
+        height: 24px;
+        content: '';
+        background: linear-gradient(to bottom, var(--link-color) 16%, transparent 17%, transparent 42%, var(--link-color) 43%, var(--link-color) 58%, transparent 59%, transparent 84%, var(--link-color) 85%);
+      }
     }
-  }
 
-  &__burger_closing {
-    &::before {
-      background: linear-gradient(to bottom, var(--link-disabled-color) 16%, transparent 17%, transparent 42%, var(--link-disabled-color) 43%, var(--link-disabled-color) 58%, transparent 59%, transparent 84%, var(--link-disabled-color) 85%);
+    &__burger_closing {
+      &::before {
+        background: linear-gradient(to bottom, var(--link-disabled-color) 16%, transparent 17%, transparent 42%, var(--link-disabled-color) 43%, var(--link-disabled-color) 58%, transparent 59%, transparent 84%, var(--link-disabled-color) 85%);
+      }
     }
-  }
-
-  &__title {
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 1;
-    color: #000;
-    text-decoration: none;
   }
 }
 
@@ -72,8 +75,32 @@
   .header {
     padding-right: 25px;
 
-    &__burger {
-      padding: 0 25px;
+    &__item_title {
+      display: block;
+      flex: auto;
+    }
+
+    &__item_search {
+      flex: none;
+      width: 290px;
+    }
+
+    &__title {
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1;
+      color: #000;
+      text-decoration: none;
+    }
+  }
+}
+
+@media (hover: hover) {
+  .header {
+    &__burger:hover {
+      &::before {
+        background: linear-gradient(to bottom, var(--link-hover-color) 16%, transparent 17%, transparent 42%, var(--link-hover-color) 43%, var(--link-hover-color) 58%, transparent 59%, transparent 84%, var(--link-hover-color) 85%);
+      }
     }
   }
 }

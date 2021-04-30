@@ -1,4 +1,4 @@
-@import '/../../assets/css/variables/link.css';
+@import '/../../helpers/css/variables/link.css';
 
 .list-menu {
   &__list {
@@ -20,9 +20,15 @@
     text-decoration: none;
   }
 
-  &__link:hover,
-  &__link:active,
   &__link_active {
     color: var(--link-hover-color);
+  }
+}
+
+@media (hover: hover) {
+  .list-menu {
+    &__link:hover {
+      color: var(--link-hover-color);
+    }
   }
 }

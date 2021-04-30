@@ -1,5 +1,5 @@
-@import '/../../assets/css/variables/header.css';
-@import '/../../assets/css/variables/custom-media.css';
+@import '/../../helpers/css/variables/header.css';
+@import '/../../helpers/css/variables/custom-media.css';
 
 .layout {
   position: relative;
@@ -7,21 +7,13 @@
   flex-direction: column;
   min-height: 100vh;
 
-  &__main {
-    display: flex;
-    flex: auto;
-  }
-
   &__article {
     max-width: 800px;
-    padding: 40px;
     margin: 0 auto;
   }
 
   &__sidebar {
     box-sizing: border-box;
-    flex: none;
-    order: -1;
     width: 250px;
     background: #f5f2f0;
     border-right: 1px solid #d5d2d0;
@@ -44,10 +36,39 @@
   }
 }
 
-/*
-@media (--desktop) {
+@media (--mobile) {
   .layout {
+    &__sidebar {
+      position: fixed;
+      top: var(--header-height);
+      right: 100vw;
+      transition-duration: 150ms;
+    }
 
+    &__sidebar_active {
+      transform: translateX(100%);
+    }
+
+    &__article {
+      padding: 10px;
+    }
   }
 }
-*/
+
+@media (--desktop) {
+  .layout {
+    &__main {
+      display: flex;
+      flex: auto;
+    }
+
+    &__sidebar {
+      flex: none;
+      order: -1;
+    }
+
+    &__article {
+      padding: 40px;
+    }
+  }
+}

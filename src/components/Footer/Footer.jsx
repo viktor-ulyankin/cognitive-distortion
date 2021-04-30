@@ -1,14 +1,16 @@
 import React from 'react';
 
 const Footer = () => {
-  const strData = '2021—2021';
+  const today = new Date();
+  const startCopyrightYear = 2021;
+  const endCopyrightYear = today.getFullYear();
 
   return (
     <footer className="footer">
       <div className="footer__box">
         <div className="footer__item">
           ©&nbsp;
-          { strData }
+          { startCopyrightYear === endCopyrightYear ? startCopyrightYear : `${startCopyrightYear}—${endCopyrightYear}` }
           &nbsp; Виктор Ульянкин
         </div>
 

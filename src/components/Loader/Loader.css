@@ -1,0 +1,28 @@
+@import '/../../helpers/css/variables/link.css';
+
+.loader {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+
+  &::after {
+    display: block;
+    width: calc(100% - 0.2em * 2);
+    height: calc(100% - 0.2em * 2);
+    content: '';
+    border: 0.2em solid var(--link-color);
+    border-color: var(--link-color) transparent var(--link-color) transparent;
+    border-radius: 50%;
+    animation: loader 1.2s linear infinite;
+  }
+
+  @keyframes loader {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
