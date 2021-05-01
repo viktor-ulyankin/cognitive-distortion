@@ -2,22 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './helpers/css/common.css';
-import Home from './pages/Home';
-import Article from './pages/Article';
-import Title from './components/Title';
+import ROUTES from './routes';
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route exact path="/article/:id">
-        <Article />
-      </Route>
-      <Route path="*">
-        <Title>404</Title>
-      </Route>
+      {Object.keys(ROUTES).map((key) => <Route key={key} {...ROUTES[key]} />)}
     </Switch>
   </BrowserRouter>,
   document.getElementById('root'),

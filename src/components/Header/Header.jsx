@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Search from '../Search';
+import ROUTES from '../../routes';
 
 const Header = ({ closingBurger, onBurgerClick }) => (
   <header className="header">
@@ -10,7 +11,7 @@ const Header = ({ closingBurger, onBurgerClick }) => (
       </div>
 
       <div className="header__item header__item_title">
-        <Link className="header__title" to="/">Когнитивные искажения</Link>
+        <Link className="header__title" to={ROUTES.home.path}>Когнитивные искажения</Link>
       </div>
 
       <div className="header__item header__item_search">
