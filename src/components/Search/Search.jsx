@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import Loader from '../Loader';
 
 const Search = () => {
-  const [isLoading, setLoading] = useState(false);
-
-  setLoading(); // Переделать
+  const [isLoading] = useState(false);
+  // const [isLoading, setLoading] = useState(false);
+  // setLoading(); // Переделать
 
   return (
     <div className="search">
