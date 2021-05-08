@@ -7,7 +7,6 @@
   display: flex;
   height: var(--header-height);
   padding-right: 10px;
-  overflow: hidden;
   background-color: #fff;
   border-bottom: 4px solid #eee;
 

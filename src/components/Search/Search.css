@@ -1,6 +1,9 @@
+@import '/../../helpers/css/variables/bg.css';
 @import '/../../helpers/css/variables/link.css';
 
 .search {
+  position: relative;
+
   &__form {
     position: relative;
     height: 34px;
@@ -63,5 +66,31 @@
   &__loading_active {
     display: block;
     font-size: 14px;
+  }
+
+  &__result {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid var(--gray-color);
+    box-shadow: 0 6px 8px var(--light-gray-color);
+  }
+
+  &__result-link {
+    display: block;
+    padding: 3px 10px;
+    color: var(--link-color);
+    text-decoration: none;
+  }
+}
+
+@media (hover: hover) {
+  .search {
+    &__result-link:hover {
+      background-color: var(--light-gray-color);
+    }
   }
 }

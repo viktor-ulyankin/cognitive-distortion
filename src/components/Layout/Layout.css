@@ -1,3 +1,4 @@
+@import '/../../helpers/css/variables/bg.css';
 @import '/../../helpers/css/variables/header.css';
 @import '/../../helpers/css/variables/custom-media.css';
 
@@ -15,8 +16,8 @@
   &__sidebar {
     box-sizing: border-box;
     width: 250px;
-    background: #f5f2f0;
-    border-right: 1px solid #d5d2d0;
+    background: var(--light-gray-color);
+    border-right: 1px solid var(--gray-color);
   }
 
   &__sidebar-box {
