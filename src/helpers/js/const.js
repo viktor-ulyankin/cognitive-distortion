@@ -6,5 +6,8 @@ const SCREEN = {
     MIN: 992,
   },
 };
+const SEARCH = {
+  MIN_QTY_LETTERS: 3,
+};
 
-export { SCREEN };
+export { SCREEN, SEARCH };
