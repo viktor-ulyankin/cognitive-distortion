@@ -1,20 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import useDataArticleList from '../../hooks/useDataArticleList';
+import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../Loader';
+import { actionLoadDataArticleList } from '../../store/actions';
 
 const ListMenu = () => {
-  const [articleList, isLoading, isError] = useDataArticleList();
+  const articleList = useSelector((state) => state.articleList);
+  const dispatch = useDispatch();
 
-  if (isError) {
-    return (
-      <nav className="list-menu">
-        Ошибка, список статей не загружен!
-      </nav>
-    );
-  }
+  if (!articleList.length) {
+    dispatch(actionLoadDataArticleList());
 
-  if (isLoading) {
     return (
       <nav className="list-menu">
         <Loader style={{ width: '40px' }} />
