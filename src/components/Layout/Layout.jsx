@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Header from '../Header';
 import Footer from '../Footer';
 import ListMenu from '../ListMenu';
+import { actionToggleSidebar } from '../../store/actions';
 
 const Layout = ({ children }) => {
-  const [showSidebar, setShowSidebar] = useState(false);
-  const handlerBurgerClick = () => setShowSidebar(!showSidebar);
+  const showSidebar = useSelector((state) => state.showSidebar);
+  const dispatch = useDispatch();
+
+  function handlerBurgerClick() {
+    dispatch(actionToggleSidebar(showSidebar));
+  }
 
   return (
     <div className="layout">
