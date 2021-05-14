@@ -2,16 +2,15 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../Loader';
-import useDataArticleList from '../../hooks/useDataArticleList';
 import useDebounce from '../../hooks/useDebounce';
 import { actionSearchChange, actionSearchReset, actionSearchResult } from '../../store/actions';
 import { SEARCH } from '../../helpers/js/const';
 
 const Search = () => {
-  const state = useSelector((s) => s.search);
+  const thisState = useSelector((state) => state.search);
+  const articleList = useSelector((state) => state.articleList);
   const dispatch = useDispatch();
-  const [articleList] = useDataArticleList();
-  const inputValueDebounce = useDebounce(state.inputValue.length >= SEARCH.MIN_QTY_LETTERS ? state.inputValue : '', 500);
+  const inputValueDebounce = useDebounce(thisState.inputValue.length >= SEARCH.MIN_QTY_LETTERS ? thisState.inputValue : '', 500);
   const refComponent = useRef(null);
 
   // Debounce вывод результатов поиска
@@ -20,11 +19,11 @@ const Search = () => {
       typeof inputValueDebounce === 'string' && inputValueDebounce.length >= SEARCH.MIN_QTY_LETTERS
       && Array.isArray(articleList) && articleList.length
     ) {
-      setTimeout(() => { // для теста соединения
-        const filter = (item) => item.name.toLowerCase().includes(inputValueDebounce.toLowerCase());
+      // setTimeout(() => {
+      const filter = (item) => item.name.toLowerCase().includes(inputValueDebounce.toLowerCase());
 
-        dispatch(actionSearchResult(articleList.filter(filter)));
-      }, 1000);
+      dispatch(actionSearchResult(articleList.filter(filter)));
+      // }, 500); // эмуляция задержки сетевого соединения
     } else {
       dispatch(actionSearchResult());
     }
@@ -46,10 +45,10 @@ const Search = () => {
   }, [dispatch]);
 
   function Result() {
-    if (state.result.length) {
+    if (thisState.result.length) {
       return (
         <div className="search__result">
-          {state.result.map((article) => <Link key={article.id} to={`/article/${article.id}`} onClick={handleResultLinkClick} className="search__result-link">{article.name}</Link>)}
+          {thisState.result.map((article) => <Link key={article.id} to={`/article/${article.id}`} onClick={handleResultLinkClick} className="search__result-link">{article.name}</Link>)}
         </div>
       );
     }
@@ -69,9 +68,9 @@ const Search = () => {
     <div className="search" ref={refComponent}>
       <div className="search__form">
         <div className="search__icon" />
-        <input value={state.inputValue} onChange={handleInputChange} className="search__input" type="text" placeholder="Когнитивное искажение" autoCapitalize="none" autoComplete="none" maxLength="128" />
+        <input value={thisState.inputValue} onChange={handleInputChange} className="search__input" type="text" placeholder="Когнитивное искажение" autoCapitalize="none" autoComplete="none" maxLength="128" />
 
-        <div className={`search__loading${state.isLoading ? ' search__loading_active' : ''}`}>
+        <div className={`search__loading${thisState.isLoading ? ' search__loading_active' : ''}`}>
           <Loader />
         </div>
       </div>
