@@ -7,10 +7,12 @@ import Title from '../../components/Title';
 import Text from '../../components/Text';
 import Loader from '../../components/Loader';
 import { actionLoadDataArticle } from '../../store/actions';
+import { RootState } from '../../store/reducers';
 
-const Article = () => {
-  const { id } = useParams();
-  const article = useSelector((state) => state.articles?.[id]);
+const Article: React.FC = () => {
+  const { id: idString } = useParams<Record<string, string>>();
+  const id = parseInt(idString);
+  const article = useSelector((state: RootState) => state.articles?.[id]);
   const dispatch = useDispatch();
 
   if (!article) {

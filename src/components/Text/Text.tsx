@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Text = ({ children }) => (
+const Text: React.FC = ({ children }) => (
   <div className="text">
     { children }
   </div>

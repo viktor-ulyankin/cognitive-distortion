@@ -1,3 +1,4 @@
+import { AnyAction } from 'redux';
 import { SEARCH } from '../helpers/js/const';
 import {
   PUT_DATA_ARTICLE_LIST,
@@ -7,8 +8,20 @@ import {
   SEARCH_RESULT,
   TOGGLE_SIDEBAR,
 } from './actions';
+import { ArticleList, ArticlesById } from '../types';
 
-const initialState = {
+export type RootState = {
+  showSidebar: boolean,
+  search: {
+    inputValue: string,
+    isLoading: boolean,
+    result: ArticleList,
+  },
+  articleList: ArticleList,
+  articles: ArticlesById,
+}
+
+const initialState: RootState = {
   showSidebar: false,
   search: {
     inputValue: '',
@@ -19,7 +32,7 @@ const initialState = {
   articles: null,
 };
 
-function reducer(state = initialState, action) {
+function reducer(state: RootState = initialState, action: AnyAction) {
   switch (action.type) {
     case PUT_DATA_ARTICLE_LIST:
       return {

@@ -2,7 +2,7 @@ import React from 'react';
 import Title from '../../components/Title';
 import Text from '../../components/Text';
 
-const Home = () => (
+const Home: React.FC = () => (
   <>
     <Title>Когнитивные искажения</Title>
 

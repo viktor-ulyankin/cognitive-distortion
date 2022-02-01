@@ -3,9 +3,10 @@ import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../Loader';
 import { actionLoadDataArticleList } from '../../store/actions';
+import { RootState } from '../../store/reducers';
 
-const ListMenu = () => {
-  const articleList = useSelector((state) => state.articleList);
+const ListMenu: React.FC = () => {
+  const articleList = useSelector((state: RootState) => state.articleList);
   const dispatch = useDispatch();
 
   if (!articleList.length) {

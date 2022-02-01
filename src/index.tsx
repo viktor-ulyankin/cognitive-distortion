@@ -5,7 +5,7 @@ import './helpers/css/common.css';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import { logger } from 'redux-logger/src';
+import { logger } from 'redux-logger';
 import ROUTES from './routes';
 import Layout from './components/Layout';
 import reducer from './store/reducers';
