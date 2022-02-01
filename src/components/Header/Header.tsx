@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom';
 import Search from '../Search';
 import ROUTES from '../../routes';
 
-const Header = ({ closingBurger, onBurgerClick }) => (
+type Props = {
+  closingBurger: boolean,
+  onBurgerClick: () => void,
+};
+
+const Header: React.FC<Props> = ({ closingBurger, onBurgerClick }) => (
   <header className="header">
     <div className="header__box">
       <div className="header__item">

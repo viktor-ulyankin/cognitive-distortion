@@ -6,7 +6,8 @@
   "plugins": [
     "react",
     "jsx-a11y",
-    "import"
+    "import",
+    "@typescript-eslint"
   ],
   "env": {
     "browser": true,
@@ -33,7 +34,7 @@
     "no-confusing-arrow": "off",
     "no-param-reassign": ["error", { "props": false }],
     "object-curly-newline": "off",
-    "no-use-before-define": ["error", { "functions": false }],
+    "no-use-before-define": "off",
     "curly": "error",
     "nonblock-statement-body-position": ["error", "below"],
     "brace-style": ["error", "1tbs"],
@@ -52,7 +53,18 @@
       { "blankLine": "never", "prev": ["import"], "next": ["import"]}
     ],
     "react/prop-types": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-filename-extension": [2, { "extensions": [".jsx", ".tsx"] }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
   },
   "settings": {
     "import/resolver": {
@@ -60,6 +72,7 @@
       "webpack": {}
     }
   },
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module"

@@ -4,9 +4,10 @@ import Header from '../Header';
 import Footer from '../Footer';
 import ListMenu from '../ListMenu';
 import { actionToggleSidebar } from '../../store/actions';
+import { RootState } from '../../store/reducers';
 
-const Layout = ({ children }) => {
-  const showSidebar = useSelector((state) => state.showSidebar);
+const Layout: React.FC = ({ children }) => {
+  const showSidebar = useSelector((state: RootState) => state.showSidebar);
   const dispatch = useDispatch();
 
   function handlerBurgerClick() {

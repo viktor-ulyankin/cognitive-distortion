@@ -1,8 +1,16 @@
+import React from 'react';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Article from './pages/Article';
 
-const ROUTES = {
+type Route = {
+  exact: boolean,
+  path: string,
+  component: React.ComponentType,
+};
+type Routes = Record<string, Route>;
+
+const ROUTES: Routes = {
   'home': {
     exact: true,
     path: '/',
